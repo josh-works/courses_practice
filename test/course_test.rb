@@ -1,4 +1,4 @@
-require_relative '../lib/course.rb'
+require_relative 'test_helper'
 gem 'minitest'
 require 'minitest/autorun'
 
