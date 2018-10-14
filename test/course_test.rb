@@ -1,6 +1,4 @@
 require_relative 'test_helper'
-gem 'minitest'
-require 'minitest/autorun'
 
 class CourseTest < MiniTest::Test
   
@@ -15,7 +13,7 @@ class CourseTest < MiniTest::Test
   end
   
   def test_course_duration_is_days
-    math = Course.new("Math", Days[657])
+    math = Course.new("Math", Day[657])
     assert_instance_of Days, math.duration
   end
 end
