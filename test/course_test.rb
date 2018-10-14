@@ -14,7 +14,7 @@ class CourseTest < MiniTest::Test
   
   def test_course_duration_is_days
     math = Course.new("Math", Day[657])
-    assert_instance_of Days, math.duration
+    assert_instance_of Day, math.duration
   end
 end
 
