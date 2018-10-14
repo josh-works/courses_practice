@@ -12,14 +12,21 @@ class CourseTest < MiniTest::Test
     assert @math.duration
   end
   
-  def test_course_duration_is_days
+  def test_course_duration_in_days
     math = Course.new("Math", Day[657])
     assert_instance_of Day, math.duration
   end
   
-  def test_course_duration_is_weeks
-    math = Course.new("Math", Weeks[657])
+  def test_course_duration_in_weeks
+    skip
+    math = Course.new("Math", Week[657])
     assert_instance_of Week, math.duration
+  end
+  
+  def test_course_duration_in_months
+    skip
+    math = Course.new("Math", Month[7])
+    assert_instance_of Month, math.duration
   end
 end
 
