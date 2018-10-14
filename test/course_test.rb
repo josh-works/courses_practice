@@ -3,7 +3,7 @@ require_relative 'test_helper'
 class CourseTest < MiniTest::Test
   
   def setup
-    @math = Course.new("Math", "7 days")
+    @math = Course.new("Math", Days[657])
   end
   
   def test_course_exists
@@ -25,6 +25,11 @@ class CourseTest < MiniTest::Test
   def test_course_duration_in_months
     math = Course.new("Math", Months[7])
     assert_instance_of Months, math.duration
+  end
+  
+  def test_format_duration
+    result = format_duration(@math.duration)
+    assert_equal "675 glorious days", result
   end
 end
 

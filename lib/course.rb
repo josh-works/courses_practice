@@ -4,5 +4,4 @@ class Course
     @name = name
     @duration = duration
   end
-  
 end
