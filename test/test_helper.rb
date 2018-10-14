@@ -1,6 +1,4 @@
 gem 'minitest'
 require 'minitest/autorun'
 require_relative '../lib/course'
-# require_relative '../lib/day'
-# require_relative '../lib/week'
 require_relative '../lib/duration'
