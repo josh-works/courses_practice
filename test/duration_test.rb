@@ -26,17 +26,8 @@ class DurationTest < MiniTest::Test
     assert_equal "4 days", results
   end
   
-  def test_object_format
-    skip
-    # cannot figure out how to do this. I want to test the 
-    # Class[quantity] format, but the two objects are obv. not the 
-    # same. 
-    assert_equal Days[4], @days
-  end
-  
   def test_inspect
     assert_equal "Days[4]", @days.inspect
   end
-  
 end
 

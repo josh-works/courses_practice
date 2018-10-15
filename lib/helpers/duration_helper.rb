@@ -14,4 +14,12 @@ module DurationHelper
   def render_course_info
     "#{self.name} (#{self.format_duration})"
   end
+  
+  def Duration(raw_value)
+    case raw_value
+    when Duration
+      raw_value
+    end
+    # require "pry"; binding.pry
+  end
 end

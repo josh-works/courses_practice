@@ -47,5 +47,12 @@ class CourseTest < MiniTest::Test
   def test_render_course_info
     assert_equal "Math (33 glorious days)", @math.render_course_info
   end
+  
+  def test_change_duration_to_other_duration_object
+    @math.duration = Days[5]
+    assert_equal Days, @math.duration.class
+    assert_equal 5, @math.duration.quantity
+    assert_equal "Days[5]", @math.duration.inspect
+  end
 end
 
