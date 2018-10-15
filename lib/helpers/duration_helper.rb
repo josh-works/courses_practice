@@ -19,7 +19,12 @@ module DurationHelper
     case raw_value
     when Duration
       raw_value
+    when /\A(\d+)\s+days\z/i
+      Days[$1.to_i]
+    when /\A(\d+)\s+weeks\z/i
+      Weeks[$1.to_i]
+    when /\A(\d+)\s+months\z/i
+      Months[$1.to_i]
     end
-    # require "pry"; binding.pry
   end
 end

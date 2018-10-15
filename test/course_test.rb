@@ -54,5 +54,19 @@ class CourseTest < MiniTest::Test
     assert_equal 5, @math.duration.quantity
     assert_equal "Days[5]", @math.duration.inspect
   end
+  
+  def test_change_duration_with_properly_formatted_string
+    @math.duration = "5 days"
+    assert_equal Days, @math.duration.class
+    assert_equal 5, @math.duration.quantity
+    assert_equal "Days[5]", @math.duration.inspect
+  end
+  
+  def test_change_duration_with_mix_of_strings
+    @stats.duration = "3 weeks"
+    @bio.duration = "6 months"
+    assert_equal Weeks, @stats.duration.class
+    assert_equal Months, @bio.duration.class
+  end
 end
 
