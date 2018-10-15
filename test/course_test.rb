@@ -68,5 +68,10 @@ class CourseTest < MiniTest::Test
     assert_equal Weeks, @stats.duration.class
     assert_equal Months, @bio.duration.class
   end
+  
+  def test_change_duration_with_invalid_string_returns_exceptional_value
+    @math.duration = "4 cycles"
+    assert_instance_of ExceptionalValue, @math.duration
+  end
 end
 
