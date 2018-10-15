@@ -1,14 +1,9 @@
-# module DurationHelper
-# 
-#   def yell
-#     "aahhhhh"
-#   end
-# 
-#   def self.format_duration(duration)
-#     require "pry"; binding.pry
-#     case duration
-#     when Days
-#       "#{duration.amount} glorious days"
-#     end
-#   end
-# end
+module DurationHelper
+  def format_duration
+    duration = self.duration
+    case duration
+    when Days
+      "#{duration.quantity} glorious days"
+    end
+  end
+end

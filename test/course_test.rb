@@ -28,9 +28,8 @@ class CourseTest < MiniTest::Test
   end
   
   def test_format_duration
-    require "pry"; binding.pry
-    result = format_duration(@math.duration)
-    assert_equal "675 glorious days", result
+    result = @math.format_duration
+    assert_equal "657 glorious days", result
   end
 end
 

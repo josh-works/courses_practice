@@ -1,21 +1,3 @@
-# require_relative './helpers/duration_helper'
-
-module DurationHelper
-  def self.yell
-    super
-    "aahhhhh"
-  end
-  
-  def format_duration(duration)
-    super
-    case duration
-    when Days
-      "#{duration.amount} glorious days"
-    end
-  end
-end
-
-
 class Duration
   include DurationHelper
   
