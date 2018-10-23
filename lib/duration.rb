@@ -1,4 +1,6 @@
-class Duration
+require_relative 'whole_value'
+
+class Duration < WholeValue
   include DurationHelper
   
   def self.[](quantity)
