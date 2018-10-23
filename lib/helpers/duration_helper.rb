@@ -25,6 +25,8 @@ module DurationHelper
       Weeks[$1.to_i]
     when /\A(\d+)\s+months\z/i
       Months[$1.to_i]
+    else
+      ExceptionalValue.new(raw_value, "could not convert to Duration")
     end
   end
 end
