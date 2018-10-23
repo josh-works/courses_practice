@@ -73,5 +73,14 @@ class CourseTest < MiniTest::Test
     @math.duration = "4 cycles"
     assert_instance_of ExceptionalValue, @math.duration
   end
+  
+  def test_exceptional_value_retains_raw_value
+    @math.duration = "4 cycles"
+    assert_equal "4 cycles", @math.duration.to_s
+  end
+  
+  def test_course_duration_is_not_exceptional_by_default
+    refute @math.duration.exceptional?
+  end
 end
 

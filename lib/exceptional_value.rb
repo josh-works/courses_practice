@@ -4,4 +4,14 @@ class ExceptionalValue
     @raw_value = raw_value
     @reason = reason
   end
+  
+  def exceptional?
+    true
+  end
+  
+  def inspect
+    @raw_value
+  end
+  
+  alias_method :to_s, :inspect
 end
