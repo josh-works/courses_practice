@@ -3,8 +3,8 @@ require_relative 'test_helper'
 class CourseTest < MiniTest::Test
   
   def setup
-    @math = Course.new("Math", Days[33])
-    @bio = Course.new("Biology", Weeks[3])
+    @math = Course.new(Name["Math"], Days[33])
+    @bio = Course.new("Biology", "3 weeks")
     @stats = Course.new("Statistics", Months[2])
   end
   
@@ -12,6 +12,14 @@ class CourseTest < MiniTest::Test
     assert @math
     assert @math.name
     assert @math.duration
+  end
+  
+  def test_course_name_is_name_class
+    assert_instance_of Name, @math.name
+  end
+  
+  def test_course_name_can_read_in_from_raw_string
+    assert_instance_of Name, @bio.name
   end
   
   def test_course_duration_in_days
@@ -81,6 +89,12 @@ class CourseTest < MiniTest::Test
   
   def test_course_duration_is_not_exceptional_by_default
     refute @math.duration.exceptional?
+  end
+  
+  def test_name_must_be_string
+    assert_raises TypeError do
+       @math.name = 11111
+     end
   end
 end
 
